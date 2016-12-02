@@ -1,0 +1,15 @@
+<div ng-controller="TeamsController"> 
+ <h3>Add a Team</h3>
+        <form> 
+            Team: <input type='text' ng-model='newTeam.name'>
+            <input type='submit' value='Add Team' ng-click='create()'>
+        </form>
+
+      Teams List: 
+      <ul>
+        <li ng-repeat="team in teams">
+          Team: {{ team.name }} | 
+          <a href="#/" ng-click='destroy(team._id)'>delete</a>
+        </li>
+      </ul>
+</div>

@@ -1,0 +1,22 @@
+<div ng-controller="AssignmentsController"> 
+ <h3>Assign Players to a Team</h3>
+ <!--  {{this}} gets what the controller looks at --> 
+        <form>
+            Player Name: 
+            <select ng-model='newAssignment.player'>
+              <option ng-repeat='player in players' ng-value='player._id'> {{ player.name }} </option>
+            </select>
+            Team: 
+             <select ng-model='newAssignment.team' >
+               <option ng-repeat='team in teams' ng-value='team._id'> {{ team.name }} </option>
+             </select>
+            <input type='submit' value='Assign Player to Team' ng-click='create()'>
+        </form>
+
+      Roster List: 
+      <ul>
+        <li ng-repeat="player in players">
+          {{ player.name }}  | {{player._team.name}}
+        </li>
+      </ul>
+</div>
